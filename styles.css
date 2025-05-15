@@ -1,0 +1,124 @@
+/* Login */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf8f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before, body::after {
+  content: '';
+  position: absolute;
+  background-color: #5e5289;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+body::after {
+  top: auto;
+  bottom: -50%;
+  left: auto;
+  right: -50%;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-card {
+  background-color: #8577b5;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.logo i {
+  color: white;
+}
+
+.logo h2 {
+  margin: 10px 0 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.input-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.input-group i {
+  margin-right: 10px;
+  color: #aaa;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1em;
+}
+
+/* botão */
+.btn {
+  background-color: white;
+  color: #5e5289;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #ccc;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #eee;
+}
+
+/* links */
+.links {
+  margin-top: 15px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: white;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Login */
