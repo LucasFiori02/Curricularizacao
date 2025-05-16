@@ -1,0 +1,299 @@
+/* Estilos Globais */
+body {
+    font-family: 'Arial', sans-serif; /* Fonte mais próxima, ajustar se necessário */
+    margin: 0;
+    background-color: #F5F1E8; /* Bege claro de fundo */
+    color: #3E3E3E; /* Cor de texto principal (cinza escuro) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px; /* Reduzido para melhor encaixe dos elementos */
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #C5BCE0; /* Lilás claro */
+    padding: 10px 0; /* Reduzido padding vertical */
+    color: #5A5A5A; /* Cor do texto no cabeçalho (cinza médio) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-section span {
+    font-size: 1.1em; /* Ajustado tamanho */
+    font-weight: bold;
+    margin-right: 8px;
+    color: #4A4A4A;
+}
+
+.dog-icon {
+    width: 35px; /* Ajustado */
+    height: auto;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paw-logo {
+    width: 45px; /* Ajustado */
+    height: auto;
+    margin-bottom: 3px;
+}
+
+.logo-section span {
+    font-size: 0.8em; /* Ajustado */
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.login-button {
+    background-color: #FFFFFF;
+    color: #4A4A4A;
+    border: 1px solid #BDBDBD;
+    padding: 6px 12px; /* Ajustado */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Conteúdo Principal */
+main {
+    flex-grow: 1; /* Faz o main ocupar o espaço restante */
+    padding: 25px 0; /* Aumentado padding vertical */
+}
+
+.main-content-wrapper {
+    background-color: #F5F1E8; /* Bege claro */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px; /* Aumentado gap */
+}
+
+.animal-gallery {
+    flex: 0 0 300px; /* Largura fixa para a galeria */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* Aumentado margin */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    overflow: hidden; /* Para as setas não saírem da borda arredondada */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+#animal-image {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1; /* Para manter a imagem quadrada, ajustar se necessário */
+    object-fit: cover;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Ajustado */
+    cursor: pointer;
+    font-size: 1.3em; /* Ajustado */
+    border-radius: 0; /* Sem borda arredondada para as setas */
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.nav-arrow:hover {
+    opacity: 1;
+}
+
+.prev-arrow {
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.next-arrow {
+    right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.download-button {
+    background-color: #FFFFFF;
+    color: #4A4A4A;
+    border: 1px solid #BDBDBD;
+    padding: 9px 18px; /* Ajustado */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 12px; /* Ajustado */
+    width: calc(100% - 10px); /* Ajustado para não encostar nas bordas */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.animal-info {
+    flex: 1;
+    padding-left: 10px; /* Reduzido padding */
+}
+
+.animal-info h2 {
+    font-size: 1.5em; /* Ajustado */
+    color: #4A4A4A;
+    margin-top: 0;
+    margin-bottom: 20px; /* Aumentado */
+    font-weight: bold;
+}
+
+.animal-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px; /* Aumentado */
+}
+
+.animal-info ul li {
+    font-size: 1em; /* Ajustado */
+    margin-bottom: 10px; /* Ajustado */
+    color: #5A5A5A;
+    font-weight: bold;
+}
+
+.animal-info ul li span {
+    font-weight: normal;
+    color: #6E6E6E;
+    margin-left: 5px;
+}
+
+.animal-info h3 {
+    font-size: 1.1em; /* Ajustado */
+    color: #4A4A4A;
+    margin-bottom: 8px; /* Ajustado */
+    font-weight: bold;
+}
+
+.animal-info p {
+    font-size: 1em; /* Ajustado */
+    color: #6E6E6E;
+    margin-top: 0;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px; /* Reduzido */
+    padding-right: 0; /* Removido padding extra */
+}
+
+.back-button {
+    background-color: #FFFFFF;
+    color: #4A4A4A;
+    border: 1px solid #BDBDBD;
+    padding: 9px 22px; /* Ajustado */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+}
+
+/* Rodapé */
+footer {
+    background-color: #C5BCE0; /* Lilás claro */
+    padding: 15px 0; /* Ajustado */
+    margin-top: auto; /* Empurra o rodapé para baixo */
+    min-height: 40px; /* Ajustado */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+.footer-content {
+    /* Vazio conforme imagem, mas pode ser usado para créditos etc. */
+}
+
+/* Placeholders - remover ou substituir */
+img[src*="placeholder_dog_icon.png"] {
+    content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23777"><text y=".9em" font-size="90">🐶</text></svg>');
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+img[src*="placeholder_paw_logo.png"] {
+    content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23777"><text y=".9em" font-size="90">🐾</text></svg>');
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Ajustes para telas menores (exemplo básico) */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .animal-gallery {
+        flex: 0 0 auto; /* Reset flex basis */
+        width: 100%;
+        max-width: 350px; /* Limite para galeria em mobile */
+        margin: 0 auto 20px auto; /* Centralizar galeria */
+    }
+    .animal-info {
+        padding-left: 0;
+    }
+    .header-content {
+        flex-wrap: wrap; /* Permitir quebra de linha no cabeçalho */
+        justify-content: center; /* Centralizar em telas pequenas */
+        gap: 10px;
+    }
+    .welcome-section {
+        order: 1;
+    }
+    .logo-section {
+        order: 2;
+    }
+    .login-button {
+        order: 3;
+        width: 100%;
+        max-width: 200px; /* Limitar largura do botão login */
+        margin-top: 10px;
+    }
+    .bottom-controls {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .back-button {
+        width: 80%;
+        max-width: 250px;
+    }
+}
+
