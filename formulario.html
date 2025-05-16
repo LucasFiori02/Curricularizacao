@@ -9,7 +9,7 @@
 <body>
 
 <div class="form-container">
-  <!-- Barra de progresso -->
+  
   <div class="stepper-container">
     <div class="stepper">
       <div class="step active"></div>
@@ -22,10 +22,10 @@
     </div>
   </div>
 
-  <!-- Formulário com steps -->
+  
   <form id="multiStepForm">
 
-    <!-- Step 1 -->
+    
     <div class="step-content active" data-step="0">
       <h2>Informações Pessoais</h2>
       <label>Nome Completo<input type="text" name="nomeCompleto" required></label>
@@ -36,7 +36,7 @@
       <label>Qual a sua renda?<input type="text" name="renda" required></label>
     </div>
 
-    <!-- Step 2 -->
+   
     <div class="step-content" data-step="1">
       <h2>Endereço</h2>
       <label>CEP<input type="text" name="cep" required></label>
@@ -48,7 +48,7 @@
       <label>Complemento (Opcional)<input type="text" name="complemento"></label>
     </div>
 
-    <!-- Step 3 -->
+    
     <div class="step-content" data-step="2">
       <h2>Preparando o Lar</h2>
       <label><input type="checkbox" name="possuiOutrosAnimais"> Já Possui Outros Animais?</label>
@@ -58,7 +58,7 @@
       <label>Motivo para adoção<textarea name="motivoAdocao" rows="4"></textarea></label>
     </div>
 
-    <!-- Step 4 -->
+   
     <div class="step-content" data-step="3">
       <h2>Necessidades do Pet</h2>
       <label>Qual animal você tem interesse em adotar?<input type="text" name="animalInteresse" required></label>
@@ -77,7 +77,7 @@
       <label><input type="checkbox" name="animalAcessoRua"> O animal terá acesso à rua?</label>
     </div>
 
-    <!-- Step 5 -->
+   
     <div class="step-content" data-step="4">
       <h2>Preferências</h2>
       <label>Você tem condições físicas, mentais e financeiras de manter um animal?
@@ -87,7 +87,6 @@
       <label><input type="checkbox" name="concordaTaxaAdocao"> Existe uma taxa de adoção colaborativa de R$ 30,00, você concorda em contribuir?</label>
     </div>
 
-    <!-- Step 6 -->
     <div class="step-content" data-step="5">
       <h2>Envio de documentos</h2>
       <p>* Foto do RG</p>
@@ -100,14 +99,14 @@
       </label>
     </div>
 
-    <!-- Step 7 -->
+
     <div class="step-content" data-step="6">
       <h2>Cadastro realizado com sucesso!</h2>
       <p>Obrigado por concluir o cadastro para adoção. Entraremos em contato em breve.</p>
       <button type="button" id="btnVoltarMenu">Voltar ao menu</button>
     </div>
 
-    <!-- Navegação -->
+  
     <div class="form-navigation">
       <button type="button" id="btnAnterior" class="btn">Anterior</button>
       <button type="button" id="btnProximo" class="btn">Próximo</button>

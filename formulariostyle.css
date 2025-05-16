@@ -1,8 +1,8 @@
-/* Estilo base */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #8C89AC; /* fundo roxo */
+  background-color: #8C89AC; 
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -11,9 +11,9 @@ body {
   box-sizing: border-box;
 }
 
-/* Container do formulário */
+
 .form-container {
-  background: #FDF7EB; /* cartão com fundo claro */
+  background: #FDF7EB;
   padding: 40px;
   border-radius: 20px;
   width: 100%;
@@ -22,7 +22,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Barra de progresso */
+
 .stepper-container {
   counter-reset: step;
   margin-bottom: 40px;
@@ -68,15 +68,15 @@ body {
 }
 
 .step.active {
-  background-color: #8C89AC; /* roxo médio */
+  background-color: #8C89AC; 
   box-shadow: 0 0 12px rgba(140,137,172,0.4);
 }
 
 .step.completed {
-  background-color: #5A5678; /* roxo mais escuro */
+  background-color: #5A5678; 
 }
 
-/* Conteúdo de cada etapa */
+
 .step-content {
   display: none;
   animation: fadeIn 0.3s ease-in-out;
@@ -95,7 +95,7 @@ body {
   to {opacity: 1;}
 }
 
-/* Inputs e labels */
+
 form label {
   display: block;
   margin-bottom: 15px;
@@ -130,7 +130,7 @@ form input[type=checkbox] {
   margin-right: 8px;
 }
 
-/* Botões */
+
 .form-navigation {
   margin-top: 20px;
   text-align: right;
@@ -163,7 +163,7 @@ form input[type=checkbox] {
   margin-top: 20px;
 }
 
-/* Responsivo */
+
 @media(max-width: 600px) {
   .form-container {
     padding: 20px;
@@ -182,7 +182,7 @@ form input[type=checkbox] {
 }
 
 
-/* ----- ESTILIZAÇÃO ESPECIAL PARA O STEP 6 (upload) ----- */
+/* terminar */
 
 .step-content[data-step="5"] h2 {
   font-size: 28px;
