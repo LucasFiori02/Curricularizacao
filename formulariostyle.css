@@ -1,0 +1,238 @@
+/* Estilo base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #8C89AC; /* fundo roxo */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 80px 20px 20px;
+  box-sizing: border-box;
+}
+
+/* Container do formulário */
+.form-container {
+  background: #FDF7EB; /* cartão com fundo claro */
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+/* Barra de progresso */
+.stepper-container {
+  counter-reset: step;
+  margin-bottom: 40px;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.stepper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 4px;
+  background-color: #dcdcdc;
+  z-index: 0;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #dcdcdc;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.step.active {
+  background-color: #8C89AC; /* roxo médio */
+  box-shadow: 0 0 12px rgba(140,137,172,0.4);
+}
+
+.step.completed {
+  background-color: #5A5678; /* roxo mais escuro */
+}
+
+/* Conteúdo de cada etapa */
+.step-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+  background: #fdf7eb;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.step-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Inputs e labels */
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=tel],
+form input[type=date],
+form textarea,
+form input[type=file] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  margin-top: 4px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+form input:focus,
+textarea:focus {
+  border-color: #8C89AC;
+  outline: none;
+}
+
+form input[type=checkbox] {
+  margin-right: 8px;
+}
+
+/* Botões */
+.form-navigation {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.btn {
+  background-color: #8C89AC;
+  border: none;
+  color: white;
+  padding: 12px 26px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5A5678;
+}
+
+#btnVoltarMenu {
+  background-color: #999;
+  padding: 12px 26px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Responsivo */
+@media(max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .step {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+
+/* ----- ESTILIZAÇÃO ESPECIAL PARA O STEP 6 (upload) ----- */
+
+.step-content[data-step="5"] h2 {
+  font-size: 28px;
+  color: #5A5678;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.step-content[data-step="5"] p {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #4a4a4a;
+}
+
+.upload-area {
+  margin-top: 20px;
+  border: 3px dashed #8C89AC;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  color: #8C89AC;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+  background-color: #e5e0ff;
+  border-color: #5A5678;
+  color: #5A5678;
+}
+
+.upload-icon {
+  font-size: 50px;
+  user-select: none;
+  pointer-events: none;
+  color: inherit;
+}
+
+.upload-instructions {
+  user-select: none;
+}
+
+.upload-input {
+  display: none;
+}

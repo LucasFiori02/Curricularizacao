@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário com Steps - Adoção</title>
+  <link rel="stylesheet" href="formulariostyle.css" />
+</head>
+<body>
+
+<div class="form-container">
+  <!-- Barra de progresso -->
+  <div class="stepper-container">
+    <div class="stepper">
+      <div class="step active"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+  </div>
+
+  <!-- Formulário com steps -->
+  <form id="multiStepForm">
+
+    <!-- Step 1 -->
+    <div class="step-content active" data-step="0">
+      <h2>Informações Pessoais</h2>
+      <label>Nome Completo<input type="text" name="nomeCompleto" required></label>
+      <label>CPF<input type="text" name="cpf" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Telefone<input type="tel" name="telefone" required></label>
+      <label>Data de Nascimento<input type="date" name="dataNascimento" required></label>
+      <label>Qual a sua renda?<input type="text" name="renda" required></label>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-content" data-step="1">
+      <h2>Endereço</h2>
+      <label>CEP<input type="text" name="cep" required></label>
+      <label>Rua<input type="text" name="rua" required></label>
+      <label>Número<input type="text" name="numero" required></label>
+      <label>Cidade<input type="text" name="cidade" required></label>
+      <label>Estado<input type="text" name="estado" required></label>
+      <label>Bairro<input type="text" name="bairro" required></label>
+      <label>Complemento (Opcional)<input type="text" name="complemento"></label>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-content" data-step="2">
+      <h2>Preparando o Lar</h2>
+      <label><input type="checkbox" name="possuiOutrosAnimais"> Já Possui Outros Animais?</label>
+      <label>Tipo de moradia<input type="text" name="tipoMoradia" required></label>
+      <label><input type="checkbox" name="possuiEspacoAnimal"> Possui Espaço para o animal?</label>
+      <label><input type="checkbox" name="jaAdotouAnimal"> Já adotou algum animal?</label>
+      <label>Motivo para adoção<textarea name="motivoAdocao" rows="4"></textarea></label>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-content" data-step="3">
+      <h2>Necessidades do Pet</h2>
+      <label>Qual animal você tem interesse em adotar?<input type="text" name="animalInteresse" required></label>
+      <label>Tipo de moradia<input type="text" name="tipoMoradiaPet" required></label>
+      <label><input type="checkbox" name="residenciaConcorda"> Toda sua residência concorda com a adoção?</label>
+      <label>
+        <input type="checkbox" id="temOutrosAnimais" name="temOutrosAnimais"> Você tem outros animais?
+      </label>
+      <div id="outrosAnimaisDetalhes" style="display:none; margin-left:20px;">
+        <label>Quantos e quais?<input type="text" name="quantosQuais"></label>
+        <label>
+          <input type="checkbox" id="castradosVacinados" name="castradosVacinados"> São castrados e vacinados?
+        </label>
+      </div>
+      <label><input type="checkbox" name="residenciaTemTelas"> Sua residência tem telas?</label>
+      <label><input type="checkbox" name="animalAcessoRua"> O animal terá acesso à rua?</label>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-content" data-step="4">
+      <h2>Preferências</h2>
+      <label>Você tem condições físicas, mentais e financeiras de manter um animal?
+        <input type="text" name="condicoesManterAnimal" required>
+      </label>
+      <label><input type="checkbox" name="concordaCastracao"> A castração e vacinação do animal é obrigatória, você concorda com isso?</label>
+      <label><input type="checkbox" name="concordaTaxaAdocao"> Existe uma taxa de adoção colaborativa de R$ 30,00, você concorda em contribuir?</label>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-content" data-step="5">
+      <h2>Envio de documentos</h2>
+      <p>* Foto do RG</p>
+      <p>* Foto do Comprovante de Renda</p>
+      <p>* Foto do local onde o animal irá ficar (terreno, casa, canil, etc...)</p>
+      <p>* Foto das telas (caso possuir)</p>
+      <p>* Se tiver outros animais, foto dos mesmos e das suas carteiras de vacinação</p>
+      <label>Envie seus documentos:
+        <input type="file" name="documentos" multiple>
+      </label>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step-content" data-step="6">
+      <h2>Cadastro realizado com sucesso!</h2>
+      <p>Obrigado por concluir o cadastro para adoção. Entraremos em contato em breve.</p>
+      <button type="button" id="btnVoltarMenu">Voltar ao menu</button>
+    </div>
+
+    <!-- Navegação -->
+    <div class="form-navigation">
+      <button type="button" id="btnAnterior" class="btn">Anterior</button>
+      <button type="button" id="btnProximo" class="btn">Próximo</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  const steps = document.querySelectorAll(".step");
+  const stepper = document.querySelector(".stepper");
+  const stepContents = document.querySelectorAll(".step-content");
+  const btnAnterior = document.getElementById("btnAnterior");
+  const btnProximo = document.getElementById("btnProximo");
+  const btnVoltarMenu = document.getElementById("btnVoltarMenu");
+
+  let currentStep = 0;
+
+  function updateProgressLine(step) {
+    const progressPercent = (step) / (steps.length - 1) * 100;
+    stepper.style.setProperty('--progress-width', progressPercent + '%');
+  }
+
+  function showStep(step) {
+    stepContents.forEach((content, i) => {
+      content.classList.toggle("active", i === step);
+    });
+
+    steps.forEach((stepElem, i) => {
+      stepElem.classList.remove("active", "completed");
+      if(i < step) stepElem.classList.add("completed");
+      if(i === step) stepElem.classList.add("active");
+    });
+
+    btnAnterior.style.display = step === 0 ? "none" : "inline-block";
+    btnProximo.style.display = step === stepContents.length - 1 ? "none" : "inline-block";
+
+    updateProgressLine(step);
+  }
+
+  btnAnterior.addEventListener("click", () => {
+    if(currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  btnProximo.addEventListener("click", () => {
+    if(currentStep < stepContents.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  btnVoltarMenu?.addEventListener("click", () => {
+    alert("Voltando ao menu...");
+  });
+
+  showStep(currentStep);
+
+  const checkboxTemOutros = document.getElementById("temOutrosAnimais");
+  const detalhesOutrosAnimais = document.getElementById("outrosAnimaisDetalhes");
+
+  checkboxTemOutros.addEventListener("change", () => {
+    detalhesOutrosAnimais.style.display = checkboxTemOutros.checked ? "block" : "none";
+    if (!checkboxTemOutros.checked) {
+      detalhesOutrosAnimais.querySelectorAll("input").forEach(input => {
+        if (input.type === "checkbox") input.checked = false;
+        else input.value = "";
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
