@@ -59,6 +59,6 @@
 
   btnVoltarMenu.forEach(element => {
     element.addEventListener("click", function () {
-      window.location.href = "/initial.html";
+      window.location.href = "/src/initial.html";
     });
   });

@@ -20,5 +20,5 @@ futureImplementation.forEach(button => {
 });
 
 btnLogin.addEventListener('click', () => {
-    window.location.href = '/form.html';
+    window.location.href = '/src/form.html';
 });

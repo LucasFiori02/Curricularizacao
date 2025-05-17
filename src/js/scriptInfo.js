@@ -51,7 +51,7 @@ const btnLogin = document.querySelectorAll('.login');
 
 btnLogin.forEach(button => {
     button.addEventListener('click', () => {
-        window.location.href = '/form.html';
+        window.location.href = '/src/form.html';
     });
 });
 

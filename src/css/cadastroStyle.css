@@ -1,0 +1,79 @@
+        body {
+            font-family: sans-serif;
+            background-color: #7c5295;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #FDF7EB;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1181px;
+            height: 400px;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .progress-circle {
+            background-color: #7c5295;
+            color: #FDF7EB;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8em;
+        }
+
+        .progress-circle.active {
+            border: 2px solid #7c5295;
+            background-color: #FDF7EB;
+            color: #7c5295;
+        }
+
+        .message-box {
+            margin-bottom: 20px;
+        }
+
+        .success-text {
+            color: #7c5295;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .like-icon {
+            font-size: 2em;
+            color: #7c5194;
+        }
+
+        .return-button {
+            background-color: #f0e6f5;
+            color:#7c5194 ;
+
+            padding: 10px 20px;
+            border-radius: 5px;
+           
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .return-button:hover {
+            background-color: #f0e6f5;
+        }
