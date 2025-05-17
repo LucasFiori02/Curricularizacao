@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página do Animal</title>
-    <link rel="stylesheet" href="DetalheAnimal.css">
+    <title>Detalhes do Animal</title>
+
+    <link rel="stylesheet" href="/css/infoStyle.css" />
+    <link rel="stylesheet" href="/css/all/header.css">
+    <link rel="stylesheet" href="/css/all/body.css">
+    <link rel="stylesheet" href="/css/all/footer.css">
+
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <div class="welcome-section">
-                <span>BEM-VINDO</span>
-                <img src="placeholder_dog_icon.png" alt="Ícone de Cachorro" class="dog-icon">
+        <div class="top-bar">
+            <button class="login btn">LOGIN</button>
+            <img src="/img/logo-acapra.png" class="logo" alt="Logo Acapra">
+            <div class="welcome">
+                <h2>BEM-VINDO!</h2>
             </div>
-            <div class="logo-section">
-                <img src="placeholder_paw_logo.png" alt="Logo ACAPRA" class="paw-logo">
-                <span>ACAPRA</span>
-            </div>
-            <button class="login-button">LOGIN</button>
         </div>
     </header>
 
@@ -25,12 +26,12 @@
         <div class="container main-content">
             <section class="animal-gallery">
                 <div class="image-container">
-                    <img src="img/animal1.webp" alt="Foto do Animal" id="animal-image">
+                    <img src="img/animal1.jpg" alt="Foto do Animal" id="animal-image">
                     <button class="nav-arrow prev-arrow">&lt;</button>
                     <button class="nav-arrow next-arrow">&gt;</button>
                 </div>
-                <button class="download-button">BAIXAR HISTÓRICO MÉDICO</button>
-                <button class="download-button">BAIXAR HISTÓRICO ANIMAL</button>
+                <button class="download-button medico btn">BAIXAR HISTÓRICO MÉDICO</button>
+                <button class="download-button animal btn">BAIXAR HISTÓRICO ANIMAL</button>
             </section>
 
             <section class="animal-info">
@@ -48,16 +49,16 @@
             </section>
         </div>
         <div class="container bottom-controls">
-             <button class="back-button">VOLTAR</button>
+             <a href="/initial.html" class="back-button btn">VOLTAR</a>
         </div>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <!-- Conteúdo do rodapé, se houver -->
-        </div>
-    </footer>
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-    <script src="js/DetalheAnimal.js"></script>
+    <script src="/js/scriptInfo.js"></script>
 </body>
 </html>

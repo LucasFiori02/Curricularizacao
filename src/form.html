@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Formulário com Steps - Adoção</title>
-  <link rel="stylesheet" href="formulariostyle.css" />
+  <link rel="stylesheet" href="/css/formStyle.css" />
+  <link rel="stylesheet" href="/css/all/footer.css">
 </head>
 <body>
 
@@ -22,10 +23,8 @@
     </div>
   </div>
 
-  
   <form id="multiStepForm">
 
-    
     <div class="step-content active" data-step="0">
       <h2>Informações Pessoais</h2>
       <label>Nome Completo<input type="text" name="nomeCompleto" required></label>
@@ -34,6 +33,8 @@
       <label>Telefone<input type="tel" name="telefone" required></label>
       <label>Data de Nascimento<input type="date" name="dataNascimento" required></label>
       <label>Qual a sua renda?<input type="text" name="renda" required></label>
+      <button type="button" id="btnVoltarMenu" class="btn-menu btn">Voltar ao menu</button>
+
     </div>
 
    
@@ -103,7 +104,7 @@
     <div class="step-content" data-step="6">
       <h2>Cadastro realizado com sucesso!</h2>
       <p>Obrigado por concluir o cadastro para adoção. Entraremos em contato em breve.</p>
-      <button type="button" id="btnVoltarMenu">Voltar ao menu</button>
+      <button type="button" id="btnVoltarMenu" class="btn-menu btn">Voltar ao menu</button>
     </div>
 
   
@@ -115,71 +116,13 @@
   </form>
 </div>
 
-<script>
-  const steps = document.querySelectorAll(".step");
-  const stepper = document.querySelector(".stepper");
-  const stepContents = document.querySelectorAll(".step-content");
-  const btnAnterior = document.getElementById("btnAnterior");
-  const btnProximo = document.getElementById("btnProximo");
-  const btnVoltarMenu = document.getElementById("btnVoltarMenu");
+<footer>
+  <div class="container footer-content">
+    <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
-  let currentStep = 0;
-
-  function updateProgressLine(step) {
-    const progressPercent = (step) / (steps.length - 1) * 100;
-    stepper.style.setProperty('--progress-width', progressPercent + '%');
-  }
-
-  function showStep(step) {
-    stepContents.forEach((content, i) => {
-      content.classList.toggle("active", i === step);
-    });
-
-    steps.forEach((stepElem, i) => {
-      stepElem.classList.remove("active", "completed");
-      if(i < step) stepElem.classList.add("completed");
-      if(i === step) stepElem.classList.add("active");
-    });
-
-    btnAnterior.style.display = step === 0 ? "none" : "inline-block";
-    btnProximo.style.display = step === stepContents.length - 1 ? "none" : "inline-block";
-
-    updateProgressLine(step);
-  }
-
-  btnAnterior.addEventListener("click", () => {
-    if(currentStep > 0) {
-      currentStep--;
-      showStep(currentStep);
-    }
-  });
-
-  btnProximo.addEventListener("click", () => {
-    if(currentStep < stepContents.length - 1) {
-      currentStep++;
-      showStep(currentStep);
-    }
-  });
-
-  btnVoltarMenu?.addEventListener("click", () => {
-    alert("Voltando ao menu...");
-  });
-
-  showStep(currentStep);
-
-  const checkboxTemOutros = document.getElementById("temOutrosAnimais");
-  const detalhesOutrosAnimais = document.getElementById("outrosAnimaisDetalhes");
-
-  checkboxTemOutros.addEventListener("change", () => {
-    detalhesOutrosAnimais.style.display = checkboxTemOutros.checked ? "block" : "none";
-    if (!checkboxTemOutros.checked) {
-      detalhesOutrosAnimais.querySelectorAll("input").forEach(input => {
-        if (input.type === "checkbox") input.checked = false;
-        else input.value = "";
-      });
-    }
-  });
-</script>
+<script src="/js/scriptForm.js"></script>
 
 </body>
 </html>
