@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - ACAPRA</title>
-
-  <link rel="stylesheet" href="/src/css/loginStyle.css"/>
+  <link rel="stylesheet" href="/src/css/loginStyle.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="login-container">
@@ -16,7 +20,7 @@
         <h2>ACAPRA</h2>
       </div>
 
-      <form>
+      <form id="login-form" class="">
         <div class="input-group">
           <label for="username">
             <i class="fas fa-user"></i>
@@ -31,14 +35,88 @@
           </label>
         </div>
 
-        <button type="submit" class="btn">ENTRAR</button>
+          <button type="button" class="btn" onclick="window.location.href='initial.html'">ENTRAR</button>
+      </form>
+
+      <form id="forgot-form" class="hidden">
+        <div class="input-group">
+          <label for="forgot-email">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="forgot-email" placeholder="Seu e-mail" required />
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Recuperar Senha</button>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <div class="input-group">
+          <label for="new-username">
+            <i class="fas fa-user"></i>
+            <input type="text" id="new-username" placeholder="Novo usuário" required />
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label for="new-email">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="new-email" placeholder="Seu e-mail" required />
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label for="new-password">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="new-password" placeholder="Nova senha" required />
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar</button>
       </form>
 
       <div class="links">
-        <p><a href="#">Esqueceu sua senha?</a></p>
-        <p><a href="#">Não possui uma conta?</a></p>
+        <p id="link-forgot"><a href="#" onclick="showForm('forgot'); return false;">Esqueceu sua senha?</a></p>
+        <p id="link-register"><a href="#" onclick="showForm('register'); return false;">Não possui uma conta?</a></p>
+        <p id="link-login" class="hidden"><a href="#" onclick="showForm('login'); return false;">Voltar ao login</a></p>
       </div>
     </div>
   </div>
+
+  <script>
+    function showForm(form) {
+
+      document.getElementById('login-form').classList.add('hidden');
+      document.getElementById('forgot-form').classList.add('hidden');
+      document.getElementById('register-form').classList.add('hidden');
+
+      if (form === 'forgot') {
+        document.getElementById('forgot-form').classList.remove('hidden');
+      } else if (form === 'register') {
+        document.getElementById('register-form').classList.remove('hidden');
+      } else {
+        document.getElementById('login-form').classList.remove('hidden');
+      }
+
+      const linkLogin = document.getElementById('link-login');
+      const linkForgot = document.getElementById('link-forgot');
+      const linkRegister = document.getElementById('link-register');
+
+      if (form === 'login') {
+        linkLogin.classList.add('hidden');
+        linkForgot.classList.remove('hidden');
+        linkRegister.classList.remove('hidden');
+      } else if (form === 'forgot') {
+        linkLogin.classList.remove('hidden');
+        linkForgot.classList.add('hidden');
+        linkRegister.classList.remove('hidden');
+      } else if (form === 'register') {
+        linkLogin.classList.remove('hidden');
+        linkForgot.classList.remove('hidden');
+        linkRegister.classList.add('hidden');
+      }
+    }
+
+    showForm('login');
+  </script>
 </body>
 </html>

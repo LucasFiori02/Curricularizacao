@@ -1,4 +1,3 @@
-/* Login */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,7 +10,8 @@ body {
   position: relative;
 }
 
-body::before, body::after {
+body::before,
+body::after {
   content: '';
   position: absolute;
   background-color: #5e5289;
@@ -44,7 +44,7 @@ body::after {
   width: 100%;
   max-width: 350px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -85,9 +85,9 @@ body::after {
   outline: none;
   flex: 1;
   font-size: 1em;
+  background-color: transparent;
 }
 
-/* botão */
 .btn {
   background-color: white;
   color: #5e5289;
@@ -106,7 +106,6 @@ body::after {
   background-color: #eee;
 }
 
-/* links */
 .links {
   margin-top: 15px;
 }
@@ -115,10 +114,29 @@ body::after {
   text-decoration: none;
   font-size: 0.9em;
   color: white;
+  display: inline-block;
+  margin: 4px 0;
 }
 
 .links a:hover {
   text-decoration: underline;
 }
 
-/* Login */
+.hidden {
+  display: none;
+}
+
+form:not(.hidden) {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
