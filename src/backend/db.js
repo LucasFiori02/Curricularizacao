@@ -1,26 +1,9 @@
-// db.js
-require('dotenv').config(); // Carrega as variáveis do .env
-const { Pool } = require('pg');
+import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
 
-// Cria o pool de conexões usando a URL do .env
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false // necessário para Supabase
-  }
-});
+dotenv.config(); // lê o .env
 
-// Função para testar a conexão
-async function testarConexao() {
-  try {
-    const res = await pool.query('SELECT NOW()');
-    console.log('Conexão funcionando! Hora do servidor:', res.rows[0].now);
-  } catch (err) {
-    console.error('Erro ao conectar:', err.message);
-  } finally {
-    await pool.end();
-  }
-}
-
-// Exporta o pool para usar em outros arquivos
-module.exports = { pool, testarConexao };
+export const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
