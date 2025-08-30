@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Animal</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACAPRA - Detalhes do Animal</title>
 
     <link rel="stylesheet" href="/src/css/infoStyle.css" />
-    <link rel="stylesheet" href="/src/css/all/header.css">
-    <link rel="stylesheet" href="/src/css/all/body.css">
-    <link rel="stylesheet" href="/src/css/all/footer.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="/src/css/all/header.css" />
+    <link rel="stylesheet" href="/src/css/all/body.css" />
+    <link rel="stylesheet" href="/src/css/all/footer.css" />
+  </head>
+  <body>
     <header>
-        <div class="top-bar">
-            <button class="login btn">LOGIN</button>
-            <img src="/src/img/logo-acapra.png" class="logo" alt="Logo Acapra">
-            <div class="welcome">
-                <h2>BEM-VINDO!</h2>
-            </div>
+      <div class="top-bar">
+        <img src="/src/img/logo-acapra.png" class="logo" alt="Logo Acapra" />
+        <div class="welcome">
+          <h2>BEM-VINDO!</h2>
         </div>
+      </div>
     </header>
 
     <main>
-        <div class="container main-content">
-            <section class="animal-gallery">
-                <div class="image-container">
-                    <img src="/src/img/animal1.jpg" alt="Foto do Animal" id="animal-image">
-                    <button class="nav-arrow prev-arrow">&lt;</button>
-                    <button class="nav-arrow next-arrow">&gt;</button>
-                </div>
-                <button class="download-button medico btn">BAIXAR HISTÓRICO MÉDICO</button>
-                <button class="download-button animal btn">BAIXAR HISTÓRICO ANIMAL</button>
-            </section>
+      <div class="container main-content">
+        <!-- Galeria de imagens -->
+        <section class="animal-gallery">
+          <div class="image-container">
+            <button class="prev-arrow">&#10094;</button>
+            <img id="animal-image" src="/src/img/default.jpg" alt="Animal" />
+            <button class="next-arrow">&#10095;</button>
+          </div>
+          <button class="download-button medico btn">
+            BAIXAR HISTÓRICO MÉDICO
+          </button>
+          <button class="download-button animal btn">
+            BAIXAR HISTÓRICO ANIMAL
+          </button>
+        </section>
 
-            <section class="animal-info">
-                <h2>NOME</h2>
-                <ul>
-                    <li>SEXO: <span>[Sexo do Animal]</span></li>
-                    <li>IDADE: <span>[Idade do Animal]</span></li>
-                    <li>PORTE: <span>[Porte do Animal]</span></li>
-                    <li>PESO: <span>[Peso do Animal]</span></li>
-                    <li>TEMPERAMENTO: <span>[Temperamento do Animal]</span></li>
-                    <li>DATA DE RESGATE: <span>[Data de Resgate]</span></li>
-                </ul>
-                <h3>STATUS DA ADOÇÃO:</h3>
-                <p>[Status da Adoção]</p>
-            </section>
-        </div>
-        <div class="container bottom-controls">
-             <a href="/src/initial.html" class="back-button btn">VOLTAR</a>
-        </div>
+        <!-- Informações do animal -->
+        <section class="animal-info">
+          <h2>NOME: <span id="animal-nome"></span></h2>
+          <div class="info">
+            <p><strong>SEXO:</strong> <span id="animal-sexo"></span></p>
+            <p><strong>IDADE:</strong> <span id="animal-idade"></span> Meses</p>
+            <p><strong>PORTE:</strong> <span id="animal-porte"></span></p>
+            <p><strong>TEMPERAMENTO:</strong> <span id="animal-temperamento"></span></p>
+            <p><strong>STATUS:</strong> <span id="animal-status"></span></p>
+            <p><strong>DATA DE RESGATE:</strong> <span id="animal-resgate"></span></p>
+            <p><strong>PESO:</strong> <span id="animal-peso"></span> KG</p>
+            <p><strong>SAÚDE:</strong> <span id="animal-saude"></span></p>
+            <p><strong>NECESSIDADES ESPECIAIS:</strong> <span id="animal-necessidades"></span></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="container bottom-controls">
+        <a href="/src/initial.html" class="back-button btn">VOLTAR</a>
+      </div>
     </main>
 
-  <footer>
-    <div class="container footer-content">
-      <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+      </div>
+    </footer>
 
     <script src="/src/js/scriptInfo.js"></script>
-</body>
+  </body>
 </html>

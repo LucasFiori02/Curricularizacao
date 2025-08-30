@@ -13,6 +13,8 @@ footer {
     background-color: #8C89AC;
     justify-content: center;
     text-align: center;
+    box-shadow: none;
+    border: none;
 }
 
 

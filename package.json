@@ -1,0 +1,30 @@
+{
+  "name": "acapra-adocao",
+  "version": "1.0.0",
+  "description": "Sistema de adoção de animais ACAPRA",
+  "type": "module",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "dev": "nodemon src/backend/server.js"
+  },
+  "keywords": [
+    "adoção",
+    "animais",
+    "node",
+    "express",
+    "multer",
+    "supabase"
+  ],
+  "author": "Gustavo da Cunha, Lucas Fiori, Wellington Clemes, Henzo Kormann",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^4.19.2",
+    "multer": "^1.4.5",
+    "@supabase/supabase-js": "^2.44.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

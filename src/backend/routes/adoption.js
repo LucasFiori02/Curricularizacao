@@ -3,7 +3,6 @@ import { supabase } from "../db.js";
 
 const router = express.Router();
 
-// Cadastro de candidato à adoção
 router.post("/", async (req, res) => {
   try {
     const {
@@ -39,8 +38,21 @@ router.post("/", async (req, res) => {
       documentos_urls
     } = req.body;
 
-    // Inserir no banco de dados
-    const { data, error } = await supabase
+    
+    const { data: existingCPF, error: cpfError } = await supabase // verificar se CPF já existe no banco
+      .from("adoption_applications")
+      .select("cpf")
+      .eq("cpf", cpf)
+      .limit(1);
+
+    if (cpfError) throw cpfError;
+
+    if (existingCPF.length > 0) {
+      return res.status(400).json({ message: "Este CPF já está cadastrado no sistema." });
+    }
+
+    
+    const { data, error } = await supabase // inserir no banco
       .from("adoption_applications")
       .insert([{
         nome_completo,
@@ -79,6 +91,7 @@ router.post("/", async (req, res) => {
     if (error) throw error;
 
     res.json({ message: "Candidato à adoção cadastrado com sucesso", application: data[0] });
+
   } catch (err) {
     console.error("Erro ao cadastrar candidato:", err.message);
     res.status(500).json({ message: "Erro ao cadastrar candidato" });

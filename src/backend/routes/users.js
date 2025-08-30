@@ -4,19 +4,32 @@ import bcrypt from "bcrypt";
 
 const router = express.Router();
 
-// Roles válidas de acordo com sua tabela
-const rolesValidos = ["gestor", "voluntario"];
+// Role padrão para novos usuários
+const rolePadrao = "voluntario";
 
-// Cadastro de usuário
+// Cadastro 
 router.post("/register", async (req, res) => {
   try {
-    const { nome, email, senha, role } = req.body;
+    const { nome, email, senha } = req.body;
 
-    // Valida role
-    if (!rolesValidos.includes(role)) {
-      return res.status(400).json({
-        message: "Role inválida. Use 'gestor' ou 'voluntario'."
-      });
+    if (!nome || !email || !senha) {
+      return res.status(400).json({ message: "Preencha todos os campos" });
+    }
+
+
+    const { data: existente, error: errorBusca } = await supabase // verificar se email já existe no banco
+      .from("app_users")
+      .select("*")
+      .eq("email", email)
+      .single();
+
+    if (errorBusca && errorBusca.code !== "PGRST116") { // PGRST116 = nenhum registro encontrado
+      console.error("Erro ao buscar email:", errorBusca);
+      return res.status(500).json({ message: "Erro ao verificar email" });
+    }
+
+    if (existente) {
+      return res.status(400).json({ message: "Email já cadastrado" });
     }
 
     // Hash da senha
@@ -25,14 +38,17 @@ router.post("/register", async (req, res) => {
     // Inserir usuário no Supabase
     const { data, error } = await supabase
       .from("app_users")
-      .insert([{ nome, email, senha_hash, role }])
+      .insert([{ nome, email, senha_hash, role: rolePadrao }])
       .select();
 
-    if (error) throw error;
+    if (error) {
+      console.error("Erro ao inserir usuário:", error);
+      return res.status(400).json({ message: error.message });
+    }
 
     res.json({ message: "Usuário cadastrado com sucesso", user: data[0] });
   } catch (err) {
-    console.error("Erro ao cadastrar usuário:", err.message);
+    console.error("Erro inesperado no register:", err);
     res.status(500).json({ message: "Erro ao cadastrar usuário" });
   }
 });
@@ -41,6 +57,10 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, senha } = req.body;
+
+    if (!email || !senha) {
+      return res.status(400).json({ message: "Preencha todos os campos" });
+    }
 
     // Buscar usuário pelo email
     const { data, error } = await supabase
@@ -63,7 +83,7 @@ router.post("/login", async (req, res) => {
     const { senha_hash, ...user } = data;
     res.json({ message: "Login realizado com sucesso", user });
   } catch (err) {
-    console.error("Erro ao fazer login:", err.message);
+    console.error("Erro ao fazer login:", err);
     res.status(500).json({ message: "Erro ao fazer login" });
   }
 });

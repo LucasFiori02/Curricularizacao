@@ -40,6 +40,7 @@ main {
     align-items: center;
 }
 
+
 .image-container {
     position: relative;
     width: 100%;
@@ -48,6 +49,7 @@ main {
     overflow: hidden; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
+
 
 #animal-image {
     width: 100%;
@@ -75,16 +77,27 @@ main {
     opacity: 1;
 }
 
+.prev-arrow,
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
 .prev-arrow {
-    left: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+  left: 10px;
 }
 
 .next-arrow {
-    right: 0;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+  right: 10px;
 }
 
 .download-button {
@@ -110,28 +123,27 @@ main {
 
 .animal-info h2 {
     font-size: 1.5em; 
-    color: #4A4A4A;
+    color: #9985b1;
     margin-top: 0;
     margin-bottom: 20px; 
     font-weight: bold;
 }
 
-.animal-info ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px; 
+h2 span {
+    color: #5A5A5A;
 }
 
-.animal-info ul li {
+
+.animal-info p {
     font-size: 1em; 
     margin-bottom: 10px; 
-    color: #5A5A5A;
+    color: #9985b1;
     font-weight: bold;
 }
 
-.animal-info ul li span {
-    font-weight: normal;
-    color: #9985b1;
+.info span {
+    font-weight: bold;
+    color: #5A5A5A;
     margin-left: 5px;
 }
 

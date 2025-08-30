@@ -1,248 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adote um Pet</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACAPRA - Bem Vindo!</title>
 
-  <link rel="stylesheet" href="/src/css/initialStyle.css" />
-  <link rel="stylesheet" href="/src/css/all/header.css">
-  <link rel="stylesheet" href="/src/css/all/body.css">
-  <link rel="stylesheet" href="/src/css/all/footer.css">
-
-</head>
-<body>
-  
-  <!-- Header -->
-  <header>
-    <div class="top-bar">
-        <button class="login btn" onclick="window.location.href='login.html'">LOGIN</button>
-        <img src="/src/img/logo-acapra.png" class="logo" alt="Logo Acapra">
+    <link rel="stylesheet" href="/src/css/initialStyle.css" />
+    <link rel="stylesheet" href="/src/css/all/header.css" />
+    <link rel="stylesheet" href="/src/css/all/body.css" />
+    <link rel="stylesheet" href="/src/css/all/footer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <img src="/src/img/logo-acapra.png" class="logo" alt="Logo Acapra" />
         <div class="welcome">
-            <h2>BEM-VINDO!</h2>
+          <h2>BEM-VINDO!</h2>
         </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div class="container">
+      <!-- Filtros - Sidebar -->
+      <aside class="sidebar">
+        <div class="filtros">
+          <h3>FILTROS</h3>
+          <br />
+          <div>
+            <p>ESPÉCIE</p>
+            <label
+              ><input type="checkbox" data-filtro="especie" value="Gato" />
+              Gato</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="especie" value="Cachorro" />
+              Cachorro</label
+            >
+          </div>
+          <div>
+            <p>GÊNERO</p>
+            <label
+              ><input type="checkbox" data-filtro="genero" value="Macho" />
+              Macho</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="genero" value="femea" />
+              Fêmea</label
+            >
+          </div>
+          <div>
+            <p>PORTE</p>
+            <label
+              ><input type="checkbox" data-filtro="porte" value="Pequeno" />
+              Pequeno</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="porte" value="medio" />
+              Médio</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="porte" value="Grande" />
+              Grande</label
+            >
+          </div>
+          <hr />
+        </div>
+      </aside>
+
+      <main class="main">
+        <!-- Cards -->
+        <section class="cards-container">
+          <!-- cards serão inseridos -->
+        </section>
+      </main>
     </div>
-  </header>
-
-  <!-- Main -->
-  <div class="container">
-
-    <!-- Filtros - Sidebar -->
-    <aside class="sidebar">
-
-      <div class="filtros">
-        <h3>FILTROS</h3><br>
-        <div>
-          <p>ESPÉCIE</p>
-          <label><input type="checkbox"> Gato</label><br>
-          <label><input type="checkbox"> Cachorro</label>
-        </div>
-        <div>
-          <p>GÊNERO</p>
-          <label><input type="checkbox"> Macho</label><br>
-          <label><input type="checkbox"> Fêmea</label>
-        </div>
-        <div>
-          <p>PORTE</p>
-          <label><input type="checkbox"> Pequeno</label><br>
-          <label><input type="checkbox"> Médio</label><br>
-          <label><input type="checkbox"> Grande</label>
-        </div>
-        <hr>
-      </div>
- 
-    </aside>
-
-    <main class="main">
-      <!-- Cards -->
-      <section class="cards-container">
-        <div class="card">
-          <img src="/src/img/animal1.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal2.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal3.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-<div class="card">
-          <img src="/src/img/animal1.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal2.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal3.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal1.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal2.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal3.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal1.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal2.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal3.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal1.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal2.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-
-        <div class="card">
-          <img src="/src/img/animal3.jpg" alt="Pet">
-          <div class="info">
-            <p>NOME<span class="pet-name"> ###</span></p>
-            <p>GÊNERO<span class="pet-gender"> ###</span></p>
-            <p>IDADE:<span class="pet-age"> ###</span></p>
-            <p>PORTE:<span class="pet-size"> ###</span></p>
-            <a href="/src/info.html" >DETALHES ></a>
-          </div>
-          <button class="adopt-button btn">QUERO ADOTAR</button>
-        </div>
-      </section>
-    </main>
-  </div>
-  <footer>
+    <footer>
       <div class="footer-content">
-          <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+        <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
       </div>
-  </footer>
+    </footer>
 
-  <script src="/src/js/scriptInitial.js"></script>
-</body>
+    <script src="/src/js/scriptInitial.js"></script>
+  </body>
 </html>
