@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Carrossel
     const fotos = (animal.animal_photos && animal.animal_photos.length > 0)
       ? animal.animal_photos.map(f => f.url)
-      : ['/src/img/default.jpg'];
+      : ['/img/default.jpg'];
 
     let currentImageIndex = 0;
 

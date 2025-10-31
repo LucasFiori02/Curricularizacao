@@ -2,6 +2,9 @@ import express from "express";
 import { supabase } from "../db.js";
 import multer from "multer";
 import path from "path";
+import fs from "fs";
+
+if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
 
 const router = express.Router();
 
@@ -123,6 +126,6 @@ router.get("/", async (req, res) => {
     res.json(result);
   } catch (err) {
     console.error("Erro ao buscar animais:", err.message);
-    res.status(500).json({ message: "Erro ao buscar animais" });
+    res.status(500).json({ message: "Erro ao buscar animais", error: err });
   }
 });

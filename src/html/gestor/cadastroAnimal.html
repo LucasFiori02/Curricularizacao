@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACAPRA - Cadastro do Animal</title>
+    <link rel="stylesheet" href="/css/animalStyle.css" />
+    <link rel="stylesheet" href="/css/all/footer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cadastro de Animal</h1>
+      <form id="animal-form" enctype="multipart/form-data" novalidate>
+        <!-- Step 1 -->
+        <div class="form-step form-step-active">
+          <h2>Informações Básicas</h2>
+          <label
+            >Nome do animal:
+            <input type="text" name="nome" required />
+          </label>
+          <label
+            >Tipo:
+            <select name="tipo" required>
+              <option value="">Selecione</option>
+              <option value="Cachorro">Cachorro</option>
+              <option value="Gato">Gato</option>
+            </select>
+          </label>
+          <label
+            >Porte:
+            <select name="porte" required>
+              <option value="">Selecione</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </label>
+          <label
+            >Sexo:
+            <select name="sexo" required>
+              <option value="">Selecione</option>
+              <option value="Macho">Macho</option>
+              <option value="Fêmea">Fêmea</option>
+            </select>
+          </label>
+          <label
+            >Idade (meses):
+            <input type="number" name="idade_meses" min="0" required />
+          </label>
+          <button type="button" id="btnVoltarMenu" class="btn-menu btn">
+            Voltar ao menu
+          </button>
+
+          <button type="button" class="btn-next">Próximo</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step">
+          <h2>Saúde e Status</h2>
+          <label
+            >Saúde:
+            <textarea name="saude"></textarea>
+          </label>
+          <label
+            >Status:
+            <select name="status" required>
+              <option value="disponivel">Disponível</option>
+              <option value="indisponivel">Indisponível</option>
+            </select>
+          </label>
+          <label
+            >Necessidades Especiais:
+            <textarea name="necessidades_especiais"></textarea>
+          </label>
+          <button type="button" class="btn-prev">Voltar</button>
+          <button type="button" class="btn-next">Próximo</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step">
+          <h2>Tutor e Temperamento</h2>
+          <label
+            >Nome do Tutor:
+            <input type="text" name="tutor_nome" />
+          </label>
+          <label
+            >Contato do Tutor:
+            <input type="text" name="tutor_contato" />
+          </label>
+          <label
+            >Temperamento:
+            <textarea name="temperamento"></textarea>
+          </label>
+          <button type="button" class="btn-prev">Voltar</button>
+          <button type="button" class="btn-next">Próximo</button>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step">
+          <h2>Datas e Peso</h2>
+          <label
+            >Data de Resgate:
+            <input type="date" name="data_resgate" required />
+          </label>
+          <label
+            >Data de Adoção:
+            <input type="date" name="data_adocao" />
+          </label>
+          <label
+            >Peso (kg):
+            <input type="number" step="0.5" name="peso" required />
+          </label>
+          <button type="button" class="btn-prev">Voltar</button>
+          <button type="button" class="btn-next">Próximo</button>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="form-step">
+          <h2 for="fotos">Fotos do Animal</h2>
+          <label
+            >Envie fotos:
+            <input
+              type="file"
+              id="fotos"
+              name="fotos"
+              accept="image/*"
+              multiple
+            />
+          </label>
+          <button type="button" class="btn-prev">Voltar</button>
+          <button type="submit">Cadastrar Animal</button>
+        </div>
+      </form>
+    </div>
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="/js/gestor/scriptAnimal.js"></script>
+  </body>
+</html>

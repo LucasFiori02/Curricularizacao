@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     card.innerHTML = `
       <img src="${
-        animal.animal_photos?.[0]?.url || "/src/img/default.jpg"
-      }" alt="Pet">
+        animal.animal_photos?.[0]?.url || "/img/default.jpg"
+      }" alt="Imagem do Animal">
       <div class="info">
         <p>NOME: <span class="pet-name">${animal.nome}</span></p>
         <p>GÊNERO: <span class="pet-gender">${animal.sexo}</span></p>
@@ -37,14 +37,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           animal.idade_meses / 12
         )} anos</span></p>
         <p>PORTE: <span class="pet-size">${animal.porte}</span></p>
-        <a href="/src/info.html?id=${animal.id}">DETALHES </a>
+        <a class="detailBtn" href="./info.html?id=${animal.id}">DETALHES </a>
       </div>
-      <button class="adopt-button btn">QUERO ADOTAR</button>
+      <a href="./form.html?id=${animal.id}"><button id="adopt-button" class="adopt-button btn">ADOTAR</button></a>
     `;
     cardsContainer.appendChild(card);
   }
 
-  function renderizarAnimais() { 
+
+  function renderizarAnimais() {
     cardsContainer.innerHTML = "";
 
     const especies = Array.from(especieCheckboxes)  // espécies selecionadas
@@ -73,12 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     filtrados.forEach(criarCard); // Cria os cards para os animais filtrados
-
-    document.querySelectorAll(".adopt-button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        alert("Funcionalidade a ser implementada no futuro.");
-      });
-    });
   }
 
   async function carregarAnimais() {

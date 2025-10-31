@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACAPRA - Bem Vindo!</title>
+
+    <link rel="stylesheet" href="/css/initialStyle.css" />
+    <link rel="stylesheet" href="/css/all/header.css" />
+    <link rel="stylesheet" href="/css/all/body.css" />
+    <link rel="stylesheet" href="/css/all/footer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <img src="/img/logo-acapra.png" class="logo" alt="Logo Acapra" />
+        <div class="welcome">
+          <h2>BEM-VINDO!</h2>
+        </div>
+        <button id="btnGestor" class="btnGestor" style="display: none">MENU DE GESTOR</button>
+      </div>
+    </header>
+    <!-- Main -->
+    <div class="container">
+      <!-- Filtros - Sidebar -->
+      <aside class="sidebar">
+        <div class="filtros">
+          <h3>FILTROS</h3>
+          <br />
+          <div>
+            <p>ESPÉCIE</p>
+            <label
+              ><input type="checkbox" data-filtro="especie" value="Gato" />
+              Gato</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="especie" value="Cachorro" />
+              Cachorro</label
+            >
+          </div>
+          <div>
+            <p>GÊNERO</p>
+            <label
+              ><input type="checkbox" data-filtro="genero" value="Macho" />
+              Macho</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="genero" value="femea" />
+              Fêmea</label
+            >
+          </div>
+          <div>
+            <p>PORTE</p>
+            <label
+              ><input type="checkbox" data-filtro="porte" value="Pequeno" />
+              Pequeno</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="porte" value="medio" />
+              Médio</label
+            ><br />
+            <label
+              ><input type="checkbox" data-filtro="porte" value="Grande" />
+              Grande</label
+            >
+          </div>
+          <hr />
+        </div>
+      </aside>
+
+      <main class="main">
+        <!-- Cards -->
+        <section class="cards-container">
+          <!-- cards serão inseridos -->
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 ACAPRA. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="/js/scriptInitial.js"></script>
+    <script src="/js/gestor/linkGestor.js"></script>
+  </body>
+</html>

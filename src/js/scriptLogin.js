@@ -1,8 +1,8 @@
 const formLogin = document.getElementById("login-form");
 const formRegister = document.getElementById("register-form");
 
-
-function showForm(form) { // Função para alternar formulários
+function showForm(form) {
+  // Função para alternar formulários
   document.getElementById("login-form").classList.add("hidden");
   document.getElementById("register-form").classList.add("hidden");
 
@@ -24,7 +24,6 @@ function showForm(form) { // Função para alternar formulários
   }
 }
 
-
 showForm("login"); // Inicializa mostrando o login
 
 // ------------------- REGISTER -------------------
@@ -33,7 +32,7 @@ formRegister.addEventListener("submit", async (e) => {
 
   const formData = new FormData(formRegister);
   const data = {
-    nome: formData.get("username"), 
+    nome: formData.get("username"),
     email: formData.get("email"),
     senha: formData.get("password"),
   };
@@ -78,7 +77,10 @@ formLogin.addEventListener("submit", async (e) => {
 
     const result = await response.json();
 
-    if (response.ok) { // redirecionar para a página inicial após login
+    if (response.ok) {
+      // redirecionar para a página inicial após login
+      localStorage.setItem("userRole", result.user.role);
+      localStorage.setItem("userName", result.user.nome);
       console.log("Usuário logado:", result.user);
       window.location.href = "initial.html";
     } else {
@@ -88,3 +90,13 @@ formLogin.addEventListener("submit", async (e) => {
     alert("Erro ao tentar logar");
   }
 });
+
+async function login(email, senha) {
+  const res = await fetch("http://localhost:3000/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, senha }),
+  });
+
+  const data = await res.json();
+}
