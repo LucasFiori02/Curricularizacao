@@ -1,4 +1,3 @@
-
 # 🐾 ACAPRA - Sistema de Adoção de Animais
 
 Este projeto é um sistema web para e adoção de animais.  
@@ -28,16 +27,18 @@ Instale:
 1. Clone este repositório:
    git clone https://github.com/LucasFiori02/Curricularizacao/tree/main/src
 
-2. Entre na pasta do projeto:
-    cd Curricularizacao
-
-3. Instale as dependências:
+2. Instale as dependências:
     npm install
+    npm install multer
 
-4. Inicie o servidor:
-    npm start
-    ou
-    npm run dev (Nodemon)
+3. Entre na pasta do projeto:
+    cd /Curricularizacao/src/backend
+
+4. Inicialize o server:
+    node server.js
+
+5. Abra no navegador:
+    http://localhost:3000/html/login.html
 
 ---
 

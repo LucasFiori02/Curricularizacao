@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const urlParams = new URLSearchParams(window.location.search); 
-    const animalId = urlParams.get("id");  // Obtém o ID do animal
+    const animalId = urlParams.get("id");  
 
     if (!animalId) {
       alert("Animal não especificado!");

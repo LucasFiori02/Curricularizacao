@@ -86,7 +86,6 @@ btnForm.addEventListener("click", () => {
   form.requestSubmit(); // dispara o envio do form manualmente
 });
 
-// Envio do formulário
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 

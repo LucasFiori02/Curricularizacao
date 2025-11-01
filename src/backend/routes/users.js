@@ -4,8 +4,7 @@ import bcrypt from "bcrypt";
 
 const router = express.Router();
 
-// Role padrão para novos usuários
-const rolePadrao = "voluntario";
+const rolePadrao = "voluntario"; // role padrão para novos usuários
 
 // Cadastro 
 router.post("/register", async (req, res) => {
@@ -35,7 +34,7 @@ router.post("/register", async (req, res) => {
     // Hash da senha
     const senha_hash = await bcrypt.hash(senha, 10);
 
-    // Inserir usuário no Supabase
+    // Inserir usuário 
     const { data, error } = await supabase
       .from("app_users")
       .insert([{ nome, email, senha_hash, role: rolePadrao }])
@@ -53,7 +52,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Login de usuário
+// Login
 router.post("/login", async (req, res) => {
   try {
     const { email, senha } = req.body;
@@ -62,7 +61,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Preencha todos os campos" });
     }
 
-    // Buscar usuário pelo email
     const { data, error } = await supabase
       .from("app_users")
       .select("*")
@@ -73,13 +71,11 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Email ou senha incorretos" });
     }
 
-    // Verificar senha
     const senhaValida = await bcrypt.compare(senha, data.senha_hash);
     if (!senhaValida) {
       return res.status(400).json({ message: "Email ou senha incorretos" });
     }
 
-    // Retornar dados do usuário sem a senha
     const { senha_hash, ...user } = data;
     res.json({ message: "Login realizado com sucesso", user });
   } catch (err) {

@@ -1,3 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+    background: radial-gradient(
+    circle,
+    rgba(181, 181, 255, 1) 0%,
+    rgba(107, 104, 151, 1) 100%
+  );
+  color: white;
+}
+
 h1 {
-    color: cyan;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ab96f7;
+  color: black;
+}
+
+thead {
+  background: #5e5289;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input, select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+#btnVoltar {
+  position: absolute;
+  top: 5%;
+  left: -2%;
+  transform: translate(50%, -50%);
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5e5289;
+  color: white;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+
+#btnVoltar:hover {
+  background-color: #7b6bb3;
+}
+
+label {
+  font-size: 20px;
+}
+
+#filterOutros {
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px;
+  width: 100px;
+}
+
+.deleteBtn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.deleteBtn:active {
+  background-color: rgb(170, 56, 43);
 }

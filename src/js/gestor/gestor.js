@@ -3,13 +3,13 @@ btnVerForms = document.getElementById('btnVerForms');
 btnCadastro = document.getElementById('btnCadastro');
 
 btnSair.addEventListener('click', () => {
-    window.location.href = '/html/initial.html'; // redireciona para a página inicial
+    window.location.href = '/html/initial.html'; 
 });
 
 btnVerForms.addEventListener('click', () => {
-    window.location.href = "./gestorFormularios.html"; // redireciona para a página de formulários
+    window.location.href = "./gestorFormularios.html"; 
 });
 
 btnCadastro.addEventListener('click', () => {
-    window.location.href = "./cadastroAnimal.html"; // redireciona para a página de cadastro de animal
+    window.location.href = "./cadastroAnimal.html"; 
 });

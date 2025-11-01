@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACAPRA - Formulários</title>
-    <link rel="stylesheet" href="/css/gestor/gestorFormsStyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACAPRA - Formulários de Adoção</title>
+  <link rel="stylesheet" href="/css/gestor/gestorFormsStyle.css">
 </head>
 <body>
-    <h1>Painel de Formulários</h1>
-    <p>Aqui você pode gerenciar os formulários enviados.</p>
+  <h1>Formulários de Adoção</h1>
+
+  <div class="filters">
     <button id="btnVoltar">Voltar</button>
-    <script src="/js/gestor/gestorFormularios.js"></script>
+    <label>
+      Possui outros animais:
+      <select id="filterOutros">
+        <option value="">Todos</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+    </label>
+  </div>
+
+  <table id="formTable">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Animal de Interesse</th>
+        <th>Possui outros animais</th>
+        <th>Data de Envio</th>
+        <th>-</th> 
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+
+  <script src="/js/gestor/gestorFormularios.js"></script>
 </body>
 </html>

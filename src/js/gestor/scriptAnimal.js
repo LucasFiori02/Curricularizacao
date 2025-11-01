@@ -3,7 +3,7 @@ const btnVoltarMenu = document.querySelectorAll(".btn-menu");
 
 btnVoltarMenu.forEach((element) => {
   element.addEventListener("click", () => {
-    window.location.href = "./initial.html";
+    window.location.href = "/html/gestor/gestor.html";
   });
 });
 
@@ -62,7 +62,7 @@ form.addEventListener("submit", async (e) => {
   const fotosInput = document.querySelector('input[name="fotos"]');
   if (fotosInput.files.length > 0) {
     for (let file of fotosInput.files) {
-      formData.append("fotos", file); // Adiciona cada arquivo de foto ao FormData
+      formData.append("fotos", file); 
     }
   }
 

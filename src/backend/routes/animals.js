@@ -8,7 +8,7 @@ if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
 
 const router = express.Router();
 
-// Configuração do Multer para salvar arquivos na pasta "uploads/"
+// salvar arquivos na pasta "uploads/"
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/"); 
@@ -69,12 +69,11 @@ router.post("/", upload.array("fotos"), async (req, res) => {
 
     const animalId = animalData[0].id;
 
-    // Inserir fotos no banco
     let fotosData = [];
     if (req.files && req.files.length > 0) {
       const fotosArray = req.files.map((file, index) => ({
         animal_id: animalId,
-        url: `/uploads/${file.filename}`, // caminho para servir a imagem
+        url: `/uploads/${file.filename}`, 
         is_capa: index === 0,
       }));
 
@@ -106,7 +105,6 @@ router.get("/", async (req, res) => {
   try {
     const { id } = req.query;
 
-    // Buscar os animais com suas fotos
     const { data, error } = await supabase.from("animals").select(`
         *,
         animal_photos(*)
